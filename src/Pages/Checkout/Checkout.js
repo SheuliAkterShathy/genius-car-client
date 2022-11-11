@@ -16,8 +16,12 @@ const Checkout = () => {
    
     const order = {
         service:_id,
-        serviceName:title,price,
-        customer:name,email,phone,message
+        serviceName:title,
+        price,
+        customer:name,
+        email,
+        phone,
+        message
     }
 
     // if(phone.length>10){
@@ -27,7 +31,7 @@ const Checkout = () => {
 
     // }
 
-    fetch('http://localhost:5000/orders', {
+    fetch('https://genius-car-server-three-mu.vercel.app/orders', {
         method:'POST',
         headers: {
             'content-type': 'application/json',

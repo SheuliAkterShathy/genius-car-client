@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 
 const OrderRow = ({order,handleDelete,handleStatusUpdate}) => {
     const {serviceName,phone,price,_id,customer,service,status} = order;
+    
     const [orderService, setOrderService] = useState({});
 
 
     useEffect( ()=>{
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://genius-car-server-three-mu.vercel.app/services/${service}`)
         .then(res =>res.json())
         .then(data =>setOrderService(data))
+        
     },[service])
 
     
